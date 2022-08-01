@@ -8,7 +8,7 @@ body{
     color: #FFFFFF;
 }
 .heading{ 
-    min-height: 100vh;
+    min-height: 50%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex; 
@@ -56,8 +56,59 @@ a{
 
 .cards{ 
     display: flex;
+    justify-content: center;
+    gap: 36px;
+    max-width: 1200px;
+    margin: 0 auto; 
+    padding: 70px 0; 
 }
 
 .card{ 
-    width: 250px;
+    min-width: 250px;
+    background: #FFFFFF;  
+}
+.card-bottom{ 
+    display: flex;
+    background: #FFFFFF;  
+}
+.card img{
+    width: 100%;
+}
+.card--info{ 
+    padding: 18px;
+}
+
+.card--title{ 
+    font-weight: 500;
+    font-size: 21px;
+    line-height: 25px;
+    color: #007519;
+}
+
+.card--description{ 
+    font-weight: 400;
+    font-size: 13px;
+    line-height: 19px;
+    padding-top: 9px;
+    color: #5F5A5A;
+}
+
+.card--button{
+    background: #007519;
+    font-family: 'Inter';
+    font-weight: 700;
+    font-size: 11px;
+    line-height: 19px;
+    color: #FFFFFF;
+    padding: 6px 16px;
+    margin-top: 30px;
+    cursor: pointer; 
+    outline: none; 
+    border:none;
+}
+hr{
+    border:none;
+    border-top: 1px solid #FFFFFF;
+    max-width: 880px;
+    margin: 0 auto;
 }
