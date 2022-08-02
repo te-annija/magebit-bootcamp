@@ -1,0 +1,90 @@
+*{
+  padding:0; 
+  margin: 0; 
+}
+body{
+  font-family: 'Open Sans';
+}
+.header{ 
+  position: sticky; 
+  top:0;
+  background: #fff;
+  width: 100%;
+  border-top: 5px solid #36D64C;
+  height: 160px;
+  box-sizing: border-box;
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+}
+.navbar{
+
+  width: 100%;
+  display: grid; 
+  grid-template-columns: 2fr 3fr;
+  height: 100%;
+  background: #fff;
+  
+}
+.navbar--logo{ 
+  grid-row: 1/3;
+  padding-top: 41px;
+  margin: 0 auto;
+  
+}
+.navbar--contacts{ 
+  display: flex; 
+  align-items: center;
+  gap: 40px;
+  padding-left: 200px;
+  border-left: 2px solid #DCDCDC;
+}
+.navbar--contacts a{
+  font-weight: 600;
+  font-size: 14px;
+  color: #94949E;
+  letter-spacing: 0.35px;
+  text-decoration: none;
+}
+.navbar--icon{ 
+  color: #36D64C;
+  padding-right: 5px;
+}
+.navbar--contacts select{ 
+  border: none;
+  font-weight: 600;
+  font-size: 14px;
+  color: #94949E;
+  letter-spacing: 0.35px;
+}
+
+.navbar nav{ 
+  display: flex; 
+  align-items: center;
+  border-top: 2px solid #DCDCDC;
+  border-left: 2px solid #DCDCDC;
+  padding-left: 140px;
+}
+.navbar nav a{
+  font-weight: 700;
+  font-size: 14px;
+  color: #46455C;
+  letter-spacing: 0.35px;
+  text-transform: uppercase;
+  text-decoration: none;
+  padding-right: 30px;
+}
+.navbar--icon{
+  font-size: 14px;
+}
+
+.navbar nav a.active{
+  color: #36D64C;
+}
+
+.main--information{ 
+  max-width: 1200px; 
+  box-shadow: 0 2px 4px 0 rgba(0,0,0,.2);
+  margin: 0 auto; 
+  margin-top: 15px;
+  margin-bottom: 50px;
+  padding: 5px;
+}
