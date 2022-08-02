@@ -7,12 +7,17 @@ body{
     font-family: 'Inter', sans-serif;
     color: #FFFFFF;
 }
+.navigation{ 
+    position: absolute;
+    top:69px;
+    width: 100%;
+}
 .heading{ 
     min-height: 50%;
     max-width: 1200px;
     margin: 0 auto;
     display: flex; 
-    justify-content: center;
+    justify-content: space-between;
 }
 
 h1{
@@ -26,7 +31,7 @@ p{
     font-size: 21px;
 }
 
-a{
+.heading--information a{
     font-weight: 500;
     font-size: 24px;
     color: #FFFFFF;
@@ -69,6 +74,7 @@ a{
 }
 .card-bottom{ 
     display: flex;
+    justify-content: center;
     background: #FFFFFF;  
 }
 .card img{
@@ -112,3 +118,69 @@ hr{
     max-width: 880px;
     margin: 0 auto;
 }
+.navbar{ 
+    display: flex;
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    
+}
+.navbar nav{ 
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-right: 54px; 
+    margin: 0 auto;
+
+}
+.navbar h2{ 
+    font-weight: 600;
+    font-size: 22px;
+}
+.navbar nav a{ 
+    font-weight: 400;
+    font-size: 17px;
+    color: #FFFFFF;
+    text-decoration: none;
+    padding-left: 62px;
+}
+.navbar nav a.clicked-link{ 
+    color: #00350B;
+}
+
+.navbar .nav--forms{ 
+    display: flex;
+    align-items: center;
+    margin-right: 45px;
+}
+
+#search_bar { 
+    background: #F1F2F5;
+    padding: 11px 64px 11px 36px;
+    border: none;
+    font-weight: 400;
+    font-size: 15px;
+
+    color: #555555;
+}
+.search-form{
+    position: relative;
+}
+.search-form button{ 
+    position: absolute;
+    left: 12px;
+    top: 12px;
+    border: none;
+    cursor: pointer;
+}
+
+.nav--forms a{
+    font-weight: 500;
+    font-size: 19px;
+    text-decoration: none;
+    color: #FFFFFF;
+    background: #007519;
+    padding: 9px 17px;
+    margin-left: 9px;
+}
+
