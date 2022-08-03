@@ -1,0 +1,38 @@
+
+@import url('./fonts/fonts.css');
+@import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
+
+body{
+    font-family: 'Montserrat', sans-serif;
+}
+
+h1{
+    font-family: 'Cormorant SC', serif;
+}
+
+h2, h3, h4, h5, h6{ 
+    font-family: 'Square Peg';
+}
+
+div{ 
+    width: 50%;
+    margin-left: 30px;
+}
+
+p{ 
+    text-align: justify;
+    text-indent: 2em;
+    line-height: 1.7em;
+}
+
+p::first-letter{ 
+    font-size: 30px;
+}
+
+p::first-line{ 
+    font-style: italic;
+}
+
+.card-1 {
+    font-family: 'Ibarra Real Nova', serif;
+}

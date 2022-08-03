@@ -1,0 +1,90 @@
+@font-face {
+    font-family: 'Square Peg';
+    src: url(./Square_Peg/SquarePeg-Regular.ttf);
+}
+
+@font-face {
+    font-family: 'Cormorant SC';
+    font-weight: 400;
+    src: url(./Cormorant_SC/CormorantSC-Regular.ttf);
+}
+@font-face {
+    font-family: 'Cormorant SC';
+    font-weight: 300;
+    src: url(./Cormorant_SC/CormorantSC-Light.ttf);
+}
+@font-face {
+    font-family: 'Cormorant SC';
+    font-weight: 500;
+    src: url(./Cormorant_SC/CormorantSC-Medium.ttf);
+}
+@font-face {
+    font-family: 'Cormorant SC';
+    font-weight: 600;
+    src: url(./Cormorant_SC/CormorantSC-SemiBold.ttf);
+}
+@font-face {
+    font-family: 'Cormorant SC';
+    font-weight: 700;
+    src: url(./Cormorant_SC/CormorantSC-Bold.ttf);
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 300;
+    font-style: normal;
+    src: url(./Montserrat/static/Montserrat-Light.ttf);
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 300;
+    font-style: italic;
+    src: url(./Montserrat/static/Montserrat-LightItalic.ttf);
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-style: normal;
+    src: url(./Montserrat/static/Montserrat-Regular.ttf);
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 400;
+    font-style: italic;
+    src: url(./Montserrat/static/Montserrat-Italic.ttf);
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-style: normal;
+    src: url(./Montserrat/static/Montserrat-Medium.ttf);
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-style: italic;
+    src: url(./Montserrat/static/Montserrat-MediumItalic.ttf);
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-style: normal;
+    src: url(./Montserrat/static/Montserrat-SemiBold.ttf);
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 600;
+    font-style: italic;
+    src: url(./Montserrat/static/Montserrat-SemiBoldItalic.ttf);
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-style: normal;
+    src: url(./Montserrat/static/Montserrat-Bold.ttf);
+}
+@font-face {
+    font-family: 'Montserrat';
+    font-weight: 700;
+    font-style: normal;
+    src: url(./Montserrat/static/Montserrat-BoldItalic.ttf);
+}
