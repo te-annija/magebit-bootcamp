@@ -12,7 +12,7 @@
 .navbar a {
   position: relative;
 }
-.navbar a .count_circle {
+.navbar .count_circle {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -77,7 +77,7 @@
 .navbar__profile p {
   padding-right: 11px;
 }
-.navbar__profile a {
+.navbar__profile a, .navbar__profile .hamburger {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -88,12 +88,62 @@
 }
 .navbar__profile .hamburger {
   display: none;
+  cursor: pointer;
 }
 .navbar__default_img {
   width: 40px;
   height: 40px;
   background: #000;
   border-radius: 50%;
+}
+
+.header {
+  background: linear-gradient(180deg, #6F6F7A 0%, #FFFFFF 47.92%);
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+}
+.header__cover {
+  max-width: 941px;
+  height: 300px;
+  background: #202020;
+  border-radius: 0px 0px 8px 8px;
+  margin: 0 auto;
+}
+.header__user_info {
+  height: 142px;
+  max-width: 877px;
+  margin: 0 auto;
+  display: flex;
+}
+.header__profile_picture {
+  width: 132px;
+  height: 132px;
+  background-color: #000;
+  border-radius: 50%;
+  position: relative;
+  top: -10px;
+}
+.header__info {
+  align-self: center;
+  padding-left: 29px;
+}
+.header__info h2 {
+  font-weight: 700;
+  font-size: 28px;
+  padding-bottom: 5px;
+}
+.header__info p {
+  font-weight: 400;
+  font-size: 17px;
+  color: #66676B;
+}
+.header__box {
+  background: #0572EF;
+  border-radius: 6px;
+  height: 40px;
+  width: 312px;
+  margin-left: auto;
+  margin-bottom: 28px;
+  align-self: flex-end;
 }
 
 @media screen and (max-width: 1000px) {
@@ -114,17 +164,18 @@
     margin-right: 15px;
   }
 }
-/* @media screen and (max-width: 650px){ 
-    .navbar{ 
-        &__profile_icons{
-            position: absolute;
-            flex-direction: column;
-            right: 0; 
-            top: 30px;
-            .hamburger{ 
-                display: flex;
-            }
-        }
-
-    }
-} *//*# sourceMappingURL=style.css.map */
+@media screen and (max-width: 650px) {
+  .navbar__profile_icons {
+    display: none;
+  }
+  .navbar__profile .hamburger {
+    display: flex;
+  }
+  .active .navbar__profile_icons {
+    display: flex;
+    position: absolute;
+    flex-direction: column;
+    right: 0;
+    top: 50px;
+  }
+}/*# sourceMappingURL=style.css.map */
