@@ -2,37 +2,90 @@
 @import url('./fonts/fonts.css');
 @import url('https://fonts.googleapis.com/css2?family=Ibarra+Real+Nova:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap');
 
+*{
+    margin: 0; 
+    padding: 0;
+}
 body{
     font-family: 'Montserrat', sans-serif;
 }
 
-h1{
+.task-1 h1{
     font-family: 'Cormorant SC', serif;
 }
 
-h2, h3, h4, h5, h6{ 
+.task-1 h2,.task-1 h3,.task-1 h4,.task-1 h5,.task-1 h6{ 
     font-family: 'Square Peg';
 }
 
-div{ 
+div.task-1{ 
     width: 50%;
     margin-left: 30px;
 }
 
-p{ 
+.task-1 p{ 
     text-align: justify;
     text-indent: 2em;
     line-height: 1.7em;
 }
 
-p::first-letter{ 
+.task-1 p::first-letter{ 
     font-size: 30px;
 }
 
-p::first-line{ 
+.task-1 p::first-line{ 
+    font-style: italic;
+}
+.container{ 
+    display: flex; 
+    justify-content: center;
+    flex-wrap: wrap;
+    max-width: 1300px;
+    margin: 0 auto;
+    gap: 39px;
+}
+.card{ 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: space-between;
+    width: 400px;
+    height: 600px;
+    border: 1px solid #cecece; 
+    padding-bottom: 10px;
+}
+.card > div{ 
+    padding-left: 30px;
+}
+
+
+.block{ 
+    margin-top: 10px;
+    width: 100px; 
+    height: 35px;
+    background: #FFD600;
+}
+.card--italics{ 
+    border-top: 1px solid #FFD600;
+    padding-top: 10px;
     font-style: italic;
 }
 
 .card-1 {
     font-family: 'Ibarra Real Nova', serif;
+}
+
+.card-2{ 
+
+}
+.card-3{ 
+
+}
+.card-4{ 
+
+}
+.card-5{ 
+
+}
+.card-6{ 
+    
 }
