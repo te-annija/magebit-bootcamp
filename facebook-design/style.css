@@ -1,135 +1,130 @@
-*{ 
-    padding: 0; 
-    margin: 0; 
-    box-sizing: border-box;
-}
-a{ 
-    position: relative;
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
 }
 
-a .count-circle{ 
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    width: 20px; 
-    height: 20px;
-    background: #DE3F4F;
-    color: #FFFFFF;
-    border-radius: 50%;
-    font-weight: 400;
-    font-size: 13px;
-    position: absolute;
-    top: -5px;
-    right: -5px;
+.navbar {
+  width: 100%;
+  height: 61px;
+  background-color: #fff;
 }
-
-.navbar-container{ 
-    width: 100%;
-    height: 61px;
-    background-color: #fff;
+.navbar a {
+  position: relative;
 }
-.navbar{ 
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    width: 100%;
-    height: 100%;
-    box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
-    padding: 0 15px;
+.navbar a .count_circle {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 20px;
+  height: 20px;
+  background: #DE3F4F;
+  color: #FFFFFF;
+  border-radius: 50%;
+  font-weight: 400;
+  font-size: 13px;
+  position: absolute;
+  top: -5px;
+  right: -5px;
 }
-
-.navbar--logo{ 
-    display: flex;
-    gap: 9px;
-    align-items: center;
+.navbar__container {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  width: 100%;
+  height: 100%;
+  box-shadow: 0px 1px 2px rgba(0, 0, 0, 0.2);
+  padding: 0 15px;
 }
-
-.search-form{
-    position: relative;
+.navbar__logo {
+  display: flex;
+  gap: 9px;
+  align-items: center;
 }
-.search-form input{ 
-    background: #F1F2F5;
-    border-radius: 100px;
-    padding: 10px 36px 12px; 
-    border: none;
-    font-weight: 400;
-    font-size: 15px;
-    color: #66676B;
+.navbar__search_form {
+  position: relative;
 }
-
-.serach-icon{ 
-    position: absolute;
-    left: 13px;
-    top: 11px;
+.navbar__search_form input {
+  background: #F1F2F5;
+  border-radius: 100px;
+  padding: 10px 36px 12px;
+  border: none;
+  font-weight: 400;
+  font-size: 15px;
+  color: #66676B;
 }
-
-.navbar nav{ 
-    display: flex;
-    justify-content: space-between;
-    padding: 0 10% 0 7%;
-    width: 100%;
+.navbar__search_form .serach_icon {
+  position: absolute;
+  left: 13px;
+  top: 11px;
 }
-.navbar nav a{ 
-    display: block;
-    text-decoration: none;
-    padding: 5px;
+.navbar nav {
+  display: flex;
+  justify-content: space-between;
+  padding: 0 10% 0 7%;
+  width: 100%;
 }
-.navbar--profile, .navbar--profile--icons{
-    display: flex;
-    align-items: center;
-    gap: 8px;
+.navbar nav a {
+  display: block;
+  text-decoration: none;
+  padding: 5px;
 }
-.profile--default-img{
-    width: 40px;
-    height: 40px;
-    background: #000;
-    border-radius: 50%;
+.navbar__profile, .navbar__profile_icons {
+  display: flex;
+  align-items: center;
+  gap: 8px;
 }
-.navbar--profile p { 
-    padding-right: 11px;
+.navbar__profile p {
+  padding-right: 11px;
 }
-.navbar--profile a{ 
-    display: flex;
-    align-items: center; 
-    justify-content: center;
-    width: 40px;
-    height: 40px;
-    background: #E5E6EB;
-    border-radius: 50%;
+.navbar__profile a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 40px;
+  height: 40px;
+  background: #E5E6EB;
+  border-radius: 50%;
 }
-.hamburger{ 
-    display: none;
+.navbar__profile .hamburger {
+  display: none;
+}
+.navbar__default_img {
+  width: 40px;
+  height: 40px;
+  background: #000;
+  border-radius: 50%;
 }
 
 @media screen and (max-width: 1000px) {
-    .navbar-container{ 
-        height: 120px;
-    }
-    .navbar{ 
-        flex-direction: column;
-        align-items: flex-start;
-        margin-top: 15px;
-        justify-content: space-between;
-        position: relative; 
-    }
-
-    .navbar--profile{ 
-        position: absolute;
-        top: 0;
-        right: 0;
-        margin-right: 15px;
-    }
+  .navbar {
+    height: 120px;
+  }
+  .navbar__container {
+    flex-direction: column;
+    align-items: flex-start;
+    margin-top: 15px;
+    justify-content: space-between;
+    position: relative;
+  }
+  .navbar__profile {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin-right: 15px;
+  }
 }
 /* @media screen and (max-width: 650px){ 
-    .hamburger{ 
-        display: flex;
-    }
-    
-    .navbar--profile--icons{ 
-        position: absolute;
-        flex-direction: column;
-        right: 0; 
-        top: 30px;
-    }
-} */
+    .navbar{ 
+        &__profile_icons{
+            position: absolute;
+            flex-direction: column;
+            right: 0; 
+            top: 30px;
+            .hamburger{ 
+                display: flex;
+            }
+        }
 
+    }
+} *//*# sourceMappingURL=style.css.map */
