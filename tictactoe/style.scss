@@ -1,0 +1,49 @@
+
+.game{
+    max-width: 320px;
+    padding-top: 10px;
+    margin: 0 auto; 
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    &__container{
+        
+        display: grid;
+        
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+    } 
+    &__block{ 
+        width: 100px; 
+        height: 100px;
+        background: rgb(192, 131, 41);
+        font-size: 60px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        transition: transform .2s;
+        &:hover{ 
+            transform: scale(1.05);
+        }
+    }
+    &__winner_block{ 
+        background: green;
+    }
+    &__reset_button{ 
+        width: 80px;
+        padding: 10px;;
+        margin-top: 20px;
+        color: white;
+        background: rgb(122, 84, 27);
+        cursor: pointer;
+        &:hover{ 
+            background: rgb(100, 69, 22);
+        }
+    }
+    &__result{ 
+        font-size: 30px;
+        padding-top: 20px;
+
+    }
+}
