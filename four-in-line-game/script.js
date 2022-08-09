@@ -41,36 +41,46 @@ reset_btn.onclick = function(event){
     board.childNodes.forEach(cell => {
         cell.textContent = '';
     });
-    
+    isWon = false;
     turn = 0; 
+    document.querySelector('.game__result').textContent = '';
 }
 
 function checkWinner(){ 
     let counter = 0; 
-    let lastLeftIndex; 
     let id; 
-    //horizontally
-    //bacw
-    const winLine = [-1, 1]; 
+    let winningStepCount = 0; 
+
+    const winLine = [[-1, 1], [-11, 11], [-9, 9], [10]];  //horiz, left diagon, right diagon, vertic
 
     for (let i = 0; i < winLine.length; i++) {
-        counter = 0; 
-        
-        for(let j=0; j<4; j++){
-            id = curr_index+counter; 
-            if(board.childNodes.item(id).textContent==symbol){ 
-                counter+= winLine[i];
-            }
-        } 
+        winningStepCount = 0; 
+
+        for(let k = 0; k< winLine[i].length; k++){ 
+            counter = 0; 
+            id = curr_index; 
+
+            for(let j=0; j<3; j++){
+                id+= winLine[i][k];
+                if(id%10==1) break;
+                if(getContentById(id) == symbol){ 
+                    winningStepCount++;
+                }
+                else{ 
+                    break;
+                }
+            } 
+        }
+
+        if(winningStepCount >=3) return true;
         
     }
-        
-    
-
-
-    
-    
     return false;
+}
+
+function getContentById(id){ 
+    if(id > 100 || id < 1) return ''; 
+    return board.childNodes.item(id).textContent; 
 }
 
 
