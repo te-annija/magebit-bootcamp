@@ -1,0 +1,31 @@
+.input_field{ 
+    &__task{ 
+        width: 400px;
+    }
+}
+
+.tasks_container{ 
+    display: flex;
+    flex-direction: column;
+    gap: 15px;
+}
+
+.task{ 
+    display: flex;
+    gap: 10px;
+    border: 0.5px solid rgb(143, 138, 138);
+    width: fit-content;
+    padding: 5px 10px;
+    border-radius: 5px;
+    &__text{
+         width: 400px;
+    }
+    &__text:disabled{ 
+        border: none;
+        background: transparent;     
+    }
+}
+
+.task_template{ 
+    display: none;
+}
