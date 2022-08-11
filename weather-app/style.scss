@@ -1,0 +1,10 @@
+.hourly{
+    &__card{ 
+        width: 300px;
+        border: 1px solid grey;
+        padding: 10px;
+    }
+    &__temperature{ 
+        font-size: 1.7em;
+    }
+}
