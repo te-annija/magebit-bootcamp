@@ -9,7 +9,7 @@
 
 </head>
 <body>
-    <script src="./skeletonLoader.js"></script>
+    
     <!-- <div class="loader" ></div> -->
     <div class="content"  >
         <div class="navbar">
@@ -118,38 +118,12 @@
            <div class="container__left_side"></div> 
            <div class="container__right_side">
 
-                <div class="post_skeleton" >
-                    <div class="post__header">
-                        <span class="post__default_img skeleton"></span>
-                        <div class="post__profile_info ">
-                            <h3 class="skeleton"></h3>
-                            <p class="skeleton"></p>
-                        </div>   
-                    </div>
-                    <div class="post__description skeleton">
-                    </div>
-                    <div class="post_skeleton__image skeleton">
-                        
-                    </div>
-                    
-                    <div class="post__feedback">
-                        <div class="post__icons skeleton"></div>
-                        <p class="post__feedback__comment_count skeleton"></p>                        
-                    </div>
-                    <div class="post__comments">
-                        <div class="post__comment">
-                            <span class="post__comment_img skeleton"></span>
-                            <input type="text" name="comment"class="skeleton">
-
-                        </div>
-                    </div>
-                </div>
-
                 <div class="post" style="display: none;" >
                     <div class="post__header">
-                        <span class="post__default_img"></span>
+                        <span class="post__default_img">
+                        </span>
                         <div class="post__profile_info">
-                            <h3>Profile Name</h3>
+                            <h3></h3>
                             <p>Yesterday at 14:03</p>
                         </div>
                         <svg width="17" height="4" viewBox="0 0 17 4" >
@@ -157,9 +131,9 @@
                         </svg>    
                     </div>
                     <div class="post__description">
-                        <p>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</p>
+                        <p> Description </p>
                     </div>
-                    <img src="./images/post.png" alt="">
+                    <img src="./images/post.png" alt="" class="post__image">
                     <div class="post__feedback">
                         <div class="post__icons"></div>
                         <p>Joe Soap and 40 others</p>
@@ -186,9 +160,38 @@
                         <a href="#">View 1 comment</a>
                     </div>
                 </div>
+
+                <div class="post_skeleton" style="display: none;" >
+                    <div class="post__header">
+                        <span class="post__default_img skeleton">
+                        </span>
+                        <div class="post__profile_info ">
+                            <h3 class="skeleton"></h3>
+                            <p class="skeleton"></p>
+                        </div>   
+                    </div>
+                    <div class="post__description skeleton">
+                    </div>
+                    <div class="post_skeleton__image skeleton">
+                        
+                    </div>
+                    
+                    <div class="post__feedback">
+                        <div class="post__icons skeleton"></div>
+                        <p class="post__feedback__comment_count skeleton"></p>                        
+                    </div>
+                    <div class="post__comments">
+                        <div class="post__comment">
+                            <span class="post__comment_img skeleton"></span>
+                            <input type="text" name="comment"class="skeleton">
+
+                        </div>
+                    </div>
+                </div>
            </div>
         </main>
     </div>
-    <script src="./script.js"></script>
+    <script type="module" src="./script.js"></script>
+    
 </body>
 </html>
