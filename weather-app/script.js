@@ -1,4 +1,4 @@
-import { fetchAPI } from "../apiCall.js";
+import { fetchAPI } from "./apiCall.js";
 
 
 const dateToday = new Date(); 

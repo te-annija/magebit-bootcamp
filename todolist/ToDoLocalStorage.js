@@ -1,26 +1,23 @@
+import { Storage } from "./Storage.js";
+
 export class ToDoList{ 
     constructor(){ 
+        this.storage = new Storage();
         this.all_tasks = document.querySelector('.tasks_container');
         this.input_form =  document.querySelector('.input__form'); 
-    
 
-
-        this.input_form.onsubmit =  (event) => { 
+        this.input_form.onsubmit = (event) => { 
             event.preventDefault();
-            this.data = new FormData(this.input_form);
             let input =  document.querySelector('.input_field__task'); 
             if(input.value == '') return;
+            let id = this.storage.getIdCounter(); 
+            this.storage.add(id, input.value);
 
-            fetch('http://web.local/todo-api.php?api-name=add-task', { 
-                method: "POST", 
-                body: this.data
-            }).then((response) => response.json())
-            .then((data) => {
-                console.log(data);
-                this.#displayTask(data.data.id, data.data.text, false);
-            })
+            this.#displayTask(id, input.value);
+            input.value = '';
         }
         this.#fillValues();
+
     }
 
     #displayTask(id, text, checked){ 
@@ -36,9 +33,11 @@ export class ToDoList{
 
         new_task.dataset.id = id;
 
-        this.#deleteTaskListener(new_task);
-        this.#editTaskListener(new_task);
-        this.#checkDoneTaskListener(new_task);
+        this.#deleteTaskListener(new_task); 
+
+        this.#editTaskListener(new_task); 
+        
+        this.#checkDoneTaskListener(new_task); 
     }
 
     #checkDoneTaskListener(task_element){ 
@@ -47,57 +46,35 @@ export class ToDoList{
         let task_text = task_element.querySelector('.task__text');
 
         checkbox.onchange = (event) => { 
-            const checked = checkbox.checked
-            const data = {'id': id, 'checked' : checked}
-            checked? task_text_elem.style.textDecoration = "line-through" : task_text_elem.style.textDecoration = "none";
-
-            fetch('http://web.local/todo-api.php?api-name=update', { 
-                    method: "POST", 
-                    body: JSON.stringify(data),
-                }).then((response) => response.json())
-                .then((data) => {
-                    console.log(data);
-                })
+            if(checkbox.checked == true){
+                this.storage.checkDone(id, true);
+                task_text.style.textDecoration = "line-through";
+            }
+            else{ 
+                this.storage.checkDone(id, false);
+                task_text.style.textDecoration = "none";
+            }
         }
     }
-    
-
-
 
     #deleteTaskListener(task_element){ 
         let id = task_element.dataset.id;
         task_element.querySelector('.task__delete_btn').onclick = (event) => { 
-            const data = {'id': id} 
-    
-            fetch('http://web.local/todo-api.php?api-name=delete', { 
-                method: "POST", 
-                body: JSON.stringify(data),
-            }).then((response) => response.json())
-            .then((data) => {
-                console.log(data);
-            })
-
+            event.preventDefault();
             this.all_tasks.removeChild(event.target.parentElement);
-            
+            this.storage.remove(id);
         }
     }
+
     #editTaskListener(task_element){ 
         let edit_btn = task_element.querySelector('.task__edit_btn');
         let id = task_element.dataset.id;
         
         edit_btn.onclick = (event) => { 
             let task_text = task_element.querySelector('.task__text').value; 
-            let data = {'id': id, 'text': task_text};  
             event.preventDefault();
             if(edit_btn.classList.contains('task__save_btn')){
-                fetch('http://web.local/todo-api.php?api-name=update', { 
-                    method: "POST", 
-                    body: JSON.stringify(data),
-                }).then((response) => response.json())
-                .then((data) => {
-                    console.log(data);
-                })
-
+                this.storage.update(id, task_text); 
                 task_element.querySelector('.task__text').setAttribute('disabled', 'true'); 
                 edit_btn.textContent = 'edit';
             }
@@ -111,18 +88,9 @@ export class ToDoList{
     }
 
     #fillValues() {
-        fetch('http://web.local/todo-api.php?api-name=get-data')
-        .then((response) => response.json())
-        .then((data) => {
-            console.log(data);
-            for (let id in data.data) {
-                let task = data.data[id];
-                this.#displayTask(task.id, task.text, task.checked)
-            }
+        const all_tasks = this.storage.getData();
+        for (let id in all_tasks) {
+            this.#displayTask(id, all_tasks[id].text, all_tasks[id].checked);
         }
-        
-        );
-        
     }
-
 }
