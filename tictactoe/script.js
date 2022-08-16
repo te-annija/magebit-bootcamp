@@ -3,33 +3,53 @@ let blocks = document.querySelectorAll('.game__block');
 let turn = 0; 
 let isWon = false;
 
+fetch('tictactoe-api.php?api-name=get-data', { 
+        method: "GET", 
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);
+        fillValues(data.data);
+    })
+
+function fillValues(data){ 
+    turn = data.turns;
+    for(let key in data.moves){
+        blocks[key].textContent = data.moves[key]['symbol'];
+    }
+    checkWinner(blocks);
+}
+
+
 for(let i = 0; i< blocks.length; i+=1){
     blocks[i].onclick = function(event){
-        if(!isWon){
-            if(blocks[i].textContent == ''){
-                if(turn%2==0){ 
-                    blocks[i].textContent = 'X';
-                    isWon = checkWinner(blocks);
-                } 
-                // else{ 
-                //     blocks[i].textContent = 'O'; 
-                //     isWon = checkWinner(blocks);
-                // }
-                turn +=1;
-                if(turn<9 && isWon==false){
-                    setTimeout(botTurn, 250)
-                    
-                } 
-                isWon = checkWinner(blocks);
+        isWon = checkWinner(blocks);
+        if(blocks[i].textContent == '' && !isWon){
 
-            }
-            if(isWon){ 
-                let winner = turn%2==0? 'O' : 'X';
-                document.querySelector('.game__result').textContent = "The winner is "+  winner; 
-            }
-        }
+            userTurn(i);
             
+            if(turn<9 && isWon==false){
+                setTimeout(botTurn, 250)  
+            } 
+            isWon = checkWinner(blocks);
+        }
+        if(isWon){ 
+            let winner = turn%2==0? 'O' : 'X';
+            document.querySelector('.game__result').textContent = "The winner is "+  winner; 
+        }           
     } 
+}
+
+function userTurn(index){ 
+    if(turn%2==0){ 
+        blocks[index].textContent = 'X';
+        
+        const data = {'id': index, 'symbol': 'X', 'turn': turn}; 
+        saveMoveToFile(data);
+        
+        isWon = checkWinner(blocks);
+    } 
+    turn +=1;
 }
 
 function botTurn(){ 
@@ -48,11 +68,25 @@ function botTurn(){
     
     blocks[x].textContent = 'O';
     turn+=1;
+    
+    const data = {'id': x, 'symbol': 'O', 'turn': turn}; 
+    saveMoveToFile(data);
+
     isWon = checkWinner(blocks);
     if(isWon){ 
         let winner = turn%2==0? 'O' : 'X';
         document.querySelector('.game__result').textContent = "The winner is "+  winner; 
     }
+}
+
+function saveMoveToFile(data){ 
+    fetch('tictactoe-api.php?api-name=add-data', { 
+        method: "POST", 
+        body: JSON.stringify(data),
+    }).then((response) => response.json())
+    .then((data) => {
+        console.log(data);
+    })
 }
 
 document.querySelector('.game__reset_button').onclick = function(event){ 
@@ -62,6 +96,14 @@ document.querySelector('.game__reset_button').onclick = function(event){
     turn = 0;
     isWon = false;
     document.querySelector('.game__result').textContent = '';
+
+    fetch('tictactoe-api.php?api-name=reset', { 
+        method: "GET", 
+    })
+    .then((response) => response.json())
+    .then((data) => {
+        console.log(data);
+    })
     
     for(let i=0; i<blocks.length; i+=1){ 
         blocks[i].classList.remove('game__winner_block');
