@@ -3,8 +3,6 @@ export class ToDoList{
         this.all_tasks = document.querySelector('.tasks_container');
         this.input_form =  document.querySelector('.input__form'); 
     
-
-
         this.input_form.onsubmit =  (event) => { 
             event.preventDefault();
             this.data = new FormData(this.input_form);
@@ -47,9 +45,9 @@ export class ToDoList{
         let task_text = task_element.querySelector('.task__text');
 
         checkbox.onchange = (event) => { 
-            const checked = checkbox.checked
-            const data = {'id': id, 'checked' : checked}
-            checked? task_text_elem.style.textDecoration = "line-through" : task_text_elem.style.textDecoration = "none";
+            const checked = checkbox.checked;
+            const data = {'id': id, 'checked' : checked};
+            checked? task_text.style.textDecoration = "line-through" : task_text.style.textDecoration = "none";
 
             fetch('http://web.local/todo-api.php?api-name=update', { 
                     method: "POST", 
@@ -60,9 +58,6 @@ export class ToDoList{
                 })
         }
     }
-    
-
-
 
     #deleteTaskListener(task_element){ 
         let id = task_element.dataset.id;
@@ -81,6 +76,7 @@ export class ToDoList{
             
         }
     }
+
     #editTaskListener(task_element){ 
         let edit_btn = task_element.querySelector('.task__edit_btn');
         let id = task_element.dataset.id;
@@ -89,6 +85,7 @@ export class ToDoList{
             let task_text = task_element.querySelector('.task__text').value; 
             let data = {'id': id, 'text': task_text};  
             event.preventDefault();
+
             if(edit_btn.classList.contains('task__save_btn')){
                 fetch('http://web.local/todo-api.php?api-name=update', { 
                     method: "POST", 
