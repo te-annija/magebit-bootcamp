@@ -9,7 +9,7 @@ class ApiHelper
             $content = file_get_contents(DATA_FILE_NAME);
             $this->data = json_decode($content, true);
             if (!is_array($this->data)) {
-                $$this->data = ['id_next'=> 1, 'data'=> []];
+                $this->data = ['id_next'=> 1, 'data'=> []];
             }
         }
     }

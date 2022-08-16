@@ -2,13 +2,13 @@
 
 header('Content-Type: application/json');
 
-define('DATA_FILE_NAME', 'data.json');
+define('DATA_FILE_NAME', __DIR__.'/data.json');
 
-// ini_set('display_errors', 1);
-// ini_set('display_startup_errors', 1);
-// error_reporting(E_ALL);
+ini_set('display_errors', 1);
+ini_set('display_startup_errors', 1);
+error_reporting(E_ALL);
 
-include('./classes/ApiHelper.php');
+include(__DIR__.'/classes/ApiHelper.php');
 $api = new ApiHelper();
 
 

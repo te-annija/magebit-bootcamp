@@ -9,7 +9,7 @@ export class ToDoList{
             let input =  document.querySelector('.input_field__task'); 
             if(input.value == '') return;
 
-            fetch('http://web.local/todo-api.php?api-name=add-task', { 
+            fetch('todo-api.php?api-name=add-task', { 
                 method: "POST", 
                 body: this.data
             }).then((response) => response.json())
@@ -17,6 +17,7 @@ export class ToDoList{
                 console.log(data);
                 this.#displayTask(data.data.id, data.data.text, false);
             })
+            input.value = '';
         }
         this.#fillValues();
     }
@@ -49,7 +50,7 @@ export class ToDoList{
             const data = {'id': id, 'checked' : checked};
             checked? task_text.style.textDecoration = "line-through" : task_text.style.textDecoration = "none";
 
-            fetch('http://web.local/todo-api.php?api-name=update', { 
+            fetch('todo-api.php?api-name=update', { 
                     method: "POST", 
                     body: JSON.stringify(data),
                 }).then((response) => response.json())
@@ -64,7 +65,7 @@ export class ToDoList{
         task_element.querySelector('.task__delete_btn').onclick = (event) => { 
             const data = {'id': id} 
     
-            fetch('http://web.local/todo-api.php?api-name=delete', { 
+            fetch('todo-api.php?api-name=delete', { 
                 method: "POST", 
                 body: JSON.stringify(data),
             }).then((response) => response.json())
@@ -87,7 +88,7 @@ export class ToDoList{
             event.preventDefault();
 
             if(edit_btn.classList.contains('task__save_btn')){
-                fetch('http://web.local/todo-api.php?api-name=update', { 
+                fetch('todo-api.php?api-name=update', { 
                     method: "POST", 
                     body: JSON.stringify(data),
                 }).then((response) => response.json())
@@ -108,7 +109,7 @@ export class ToDoList{
     }
 
     #fillValues() {
-        fetch('http://web.local/todo-api.php?api-name=get-data')
+        fetch('todo-api.php?api-name=get-data')
         .then((response) => response.json())
         .then((data) => {
             console.log(data);
